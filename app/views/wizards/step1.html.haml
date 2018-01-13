@@ -1,0 +1,18 @@
+.container-fluid
+  %h1 Step 1
+  %p
+    .btn-group{ :role => "group"}
+      = link_to "Step 1", step1_wizard_path, class: 'btn btn-secondary'
+      = link_to "Step 2", "#", class: 'btn btn-secondary disabled'
+      = link_to "Step 3", "#", class: 'btn btn-secondary disabled'
+      = link_to "Step 4", "#", class: 'btn btn-secondary disabled'
+      = link_to "Step 5", "#", class: 'btn btn-secondary disabled'
+  %p= render partial: "step_progress", locals: { valuenow: "20" }
+  .form-inputs
+    = simple_form_for @user_wizard, as: :user_wizard, url: validate_step_wizard_path do |f|
+      = f.error_notification
+      = hidden_field_tag :current_step, 'step1'
+      = f.input :first_name
+      = f.input :last_name
+      = f.submit 'Next', class: 'btn btn-success'
+  %p= link_to "Back", root_path

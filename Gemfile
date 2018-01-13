@@ -63,3 +63,5 @@ gem 'pg', '~> 0.20'
 # bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-rails'
+# simple_form
+gem 'simple_form'
