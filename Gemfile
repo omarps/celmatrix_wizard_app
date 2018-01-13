@@ -60,3 +60,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", "~> 1.0"
 # postgresl
 gem 'pg', '~> 0.20'
+# bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'jquery-rails'
