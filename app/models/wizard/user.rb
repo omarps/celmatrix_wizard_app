@@ -21,5 +21,11 @@ module Wizard
       validates :first_name, presence: true
       validates :last_name, presence: true
     end
+    
+    # step 2: step1 + email_address
+    class Step2 < Step1
+      # note: very basic email validation.
+      validates :email_address, presence: true, format: { with: /@/ }
+    end
   end
 end
