@@ -1,0 +1,7 @@
+- max_step = Wizard::User::STEPS.index(current_step)
+.btn-group{ :role => "group"}
+  - Wizard::User::STEPS.each_with_index do |step, idx|
+    - if idx <= max_step
+      = link_to "Step #{idx + 1}", eval("step#{idx + 1}_wizard_path"), class: 'btn btn-secondary'
+    - else
+      = link_to "Step #{idx + 1}", "#", class: 'btn btn-secondary disabled'

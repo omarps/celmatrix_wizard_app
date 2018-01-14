@@ -1,6 +1,6 @@
 module Wizard
   module User
-    STEPS = %w(step1 step2 step3 step4).freeze
+    STEPS = %w(step1 step2 step3 step4 step5).freeze
     
     # Base class to avoid load all the user's attributes.
     class Base
