@@ -1,8 +1,8 @@
 # README
 
-##Wizard App example
+## Wizard App example
 
-###The app covers:
+### The app covers:
 
 * Data entered is stored in a user model at the end of the wizard.
 
@@ -16,7 +16,7 @@
 
 * Includes a link to a deployment in Heroku.
 
-###Technologies:
+### Technologies:
 
 * PostgreSQL connector.
 
@@ -32,7 +32,7 @@
 
 * FactoryGirl to create mock objects.
 
-###To run the application: (tested in C9 IDE)
+### To run the application: (tested in C9 IDE)
 
 * Positioning in the project folder:
 ```
@@ -61,7 +61,7 @@ rails s -b 0.0.0.0 -p 8080
 
 * Open the project preview link: https://wizard-app-omarps.c9users.io/
 
-###Project links:
+### Project links:
 
 * C9 IDE workspace: https://ide.c9.io/omarps/wizard-app
 
