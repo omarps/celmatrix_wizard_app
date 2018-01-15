@@ -36,3 +36,9 @@ en:
   _26_35: "26 - 35"
   _36_45: "36 - 45"
   _46_or_older: "46 or older"
+  # basic custom error messages
+  errors:
+    messages:
+      blank: "is required"
+      invalid: "invalid format"
+      greater_than_or_equal_to: "must be greater than 0"

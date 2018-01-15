@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20180113191852) do
     t.string "last_name"
     t.string "email_address"
     t.integer "age"
-    t.decimal "height_feets"
-    t.decimal "height_inches"
-    t.decimal "weight"
+    t.integer "height_feets"
+    t.integer "height_inches"
+    t.integer "weight"
     t.string "favorite_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

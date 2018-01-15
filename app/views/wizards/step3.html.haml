@@ -11,7 +11,7 @@
       = f.input_field :age, collection: age_values, class: "form-control"
       .row
         .col
-          = f.input :height_feets
+          = f.input :height_feets, input_html: {min: 0}
         .col
           = f.input :height_inches
       = f.input :weight
