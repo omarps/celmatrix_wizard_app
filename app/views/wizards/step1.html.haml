@@ -10,5 +10,4 @@
       = f.input :first_name
       = f.input :last_name
       = f.submit 'Next', class: 'btn btn-success'
-  %p
-  %p= link_to "Cancel", root_path, class: 'btn btn-danger'
+  = render partial: "step_cancel"

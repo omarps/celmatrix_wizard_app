@@ -2,7 +2,7 @@ class WizardsController < ApplicationController
   before_action :load_user_wizard, except: [:index, :validate_step]
 
   def index
-    @users = User.all
+    @users = User.order(id: :desc)
   end
 
   def validate_step
