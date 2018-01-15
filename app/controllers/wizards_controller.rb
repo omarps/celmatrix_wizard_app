@@ -36,12 +36,17 @@ class WizardsController < ApplicationController
   end
   
   def wizard_user_for_step(step)
-    # TODO: validate
+    raise InvalidStepError unless step.in?(Wizard::User::STEPS)
     
     "Wizard::User::#{step.camelize}".constantize.new(session[:user_attributes])
   end
   
   def user_wizard_params
-    params.require(:user_wizard).permit(:first_name, :last_name, :email_address, :age, :height_feets, :height_inches, :weight)
+    params.require(:user_wizard)
+      .permit(:first_name, :last_name, :email_address, 
+              :age, :height_feets, :height_inches, :weight,
+              :favorite_color)
   end
+  
+  class InvalidStepError < StandardError; end
 end

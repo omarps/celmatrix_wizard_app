@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get :step2
     get :step3
     get :step4
+    get :step5
 
     post :validate_step
   end

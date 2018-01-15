@@ -1,6 +1,7 @@
 module Wizard
   module User
     STEPS = %w(step1 step2 step3 step4 step5).freeze
+    COLORS = %w(Red Orange Yellow Green Blue Purple Other).freeze
     
     # Base class to avoid load all the user's attributes.
     class Base
@@ -36,5 +37,13 @@ module Wizard
       validates :height_inches, presence: true, numericality: { greater_than_or_equal_to: 0 }
       validates :weight, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
     end
+    
+    # step 4: step3 + favorite color
+    class Step4 < Step3
+      validates :favorite_color, presence: false, allow_blank: true
+    end
+    
+    # step 5: step5 + final step
+    class Step5 < Step4; end
   end
 end

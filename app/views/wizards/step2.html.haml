@@ -9,4 +9,5 @@
       = hidden_field_tag :current_step, step
       = f.input :email_address
       = f.submit 'Next', class: 'btn btn-success'
-  %p= link_to "Back", root_path
+  %p
+  %p= link_to "Cancel", root_path, class: 'btn btn-danger'

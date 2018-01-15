@@ -1,20 +1,18 @@
 .container-fluid
-  %h1 Step 3
-  - step = 'step3'
+  %h1 Step 4
+  - step = 'step4'
   %p= render partial: "step_buttongroup", locals: { current_step: step }
-  %p= render partial: "step_progress", locals: { valuenow: "60" }
+  %p= render partial: "step_progress", locals: { valuenow: "80" }
   .form-inputs
     = simple_form_for @user_wizard, as: :user_wizard, url: validate_step_wizard_path do |f|
       = f.error_notification
       = hidden_field_tag :current_step, step
-      = f.label :age
-      = f.input_field :age, collection: age_values, class: "form-control"
-      .row
-        .col
-          = f.input :height_feets
-        .col
-          = f.input :height_inches
-      = f.input :weight
+      = f.label :favorite_color
+      = f.input :favorite_color, as: :hidden
+      %select.form-control{name: :selec_color}
+        - Wizard::User::COLORS.each do |color|
+          %option{value: color, selected: params[:favorite_color] == color}= color
+      %p
       = f.submit 'Next', class: 'btn btn-success'
   %p
   %p= link_to "Cancel", root_path, class: 'btn btn-danger'
