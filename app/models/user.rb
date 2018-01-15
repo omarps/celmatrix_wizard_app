@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :height_feets, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :height_inches, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :weight, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
-  validates :favorite_color, presence: false, allow_nil: true
+  validates :favorite_color, presence: true
 end

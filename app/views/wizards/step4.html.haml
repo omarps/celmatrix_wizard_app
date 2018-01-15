@@ -8,10 +8,11 @@
       = f.error_notification
       = hidden_field_tag :current_step, step
       = f.label :favorite_color
-      = f.input :favorite_color, as: :hidden
-      %select.form-control{name: :selec_color}
+      %select#select_color.form-control
         - Wizard::User::COLORS.each do |color|
           %option{value: color, selected: params[:favorite_color] == color}= color
+      -#= f.input :favorite_color, input_html: {id: "favorite_color"}, as: :hidden
+      = f.input :favorite_color, input_html: {id: "favorite_color"}
       %p
       = f.submit 'Next', class: 'btn btn-success'
   %p

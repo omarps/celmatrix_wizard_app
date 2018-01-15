@@ -40,7 +40,7 @@ module Wizard
     
     # step 4: step3 + favorite color
     class Step4 < Step3
-      validates :favorite_color, presence: false, allow_blank: true
+      validates :favorite_color, presence: true
     end
     
     # step 5: step5 + final step
