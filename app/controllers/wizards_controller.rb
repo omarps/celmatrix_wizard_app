@@ -8,20 +8,33 @@ class WizardsController < ApplicationController
   def validate_step
     current_step = params[:current_step]
     
-    # TODO: refactor
     @user_wizard = wizard_user_for_step(current_step)
-    @user_wizard.user.attributes = user_wizard_params
-    # save session after commit.
-    session[:user_attributes] = @user_wizard.user.attributes
+    next_step = wizard_user_next_step(current_step)
+    if next_step.present?
+      @user_wizard.user.attributes = user_wizard_params
+      # save session after commit.
+      session[:user_attributes] = @user_wizard.user.attributes
+    end
     
     if @user_wizard.valid?
-      next_step = wizard_user_next_step(current_step)
-      # TODO: finish wizard
-      # create and return unless next_step
+      # finish wizard
+      create and return unless next_step
       
       redirect_to action: next_step
     else
       render current_step
+    end
+  end
+  
+  def create
+    if @user_wizard.user.save
+      # cleanup the session
+      session[:user_attributes] = nil
+      # redirect to root and report success.
+      redirect_to root_path, notice: 'User succesfully created!'
+    else
+      # redirect to first step and report error.
+      redirect_to({ action: Wizard::User::STEPS.first }, alert: 'There were a problem when creating the user.')
     end
   end
   

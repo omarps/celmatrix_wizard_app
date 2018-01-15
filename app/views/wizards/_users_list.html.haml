@@ -3,7 +3,7 @@
   %td= user.last_name
   %td= user.email_address
   -# TODO: translate age value.
-  %td= user.age
-  %td= user.height
+  %td= I18n.t(User::AGES[user.age])
+  %td= "#{user.height_feets} / #{user.height_inches}"
   %td= user.weight
   %td= user.favorite_color

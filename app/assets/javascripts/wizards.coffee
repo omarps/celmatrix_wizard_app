@@ -4,6 +4,7 @@
 $( document ).ready(() ->
   $("#select_color").on('change', () ->
     # TODO: Other
+    console.log('@@@', $("#favorite_color").val(), this.value)
     $("#favorite_color").val(this.value)
   )
 )

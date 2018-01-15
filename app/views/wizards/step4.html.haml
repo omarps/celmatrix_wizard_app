@@ -10,7 +10,7 @@
       = f.label :favorite_color
       %select#select_color.form-control
         - Wizard::User::COLORS.each do |color|
-          %option{value: color, selected: params[:favorite_color] == color}= color
+          %option{value: color, selected: @user_wizard.user.favorite_color == color}= color
       -#= f.input :favorite_color, input_html: {id: "favorite_color"}, as: :hidden
       = f.input :favorite_color, input_html: {id: "favorite_color"}
       %p
