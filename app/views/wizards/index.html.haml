@@ -1,4 +1,5 @@
 .container-fluid
+  = render partial: "flash_display"
   %h1 Users
   %p Click here to create a new user's submission:
   %p= link_to "New User", step1_wizard_path, class: 'btn btn-success'

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get :step4
     get :step5
 
+    get :validate_step, to: redirect("/wizard/step1")
     post :validate_step
   end
 
