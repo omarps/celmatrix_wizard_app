@@ -46,6 +46,10 @@ group :test do
   gem 'rspec-rails'
   # shoulda matchers
   gem 'shoulda-matchers', '~> 3.1'
+  # factory girl
+  gem "factory_girl_rails"
+  # TODO: upgrade gem 'factory_bot'
+  gem 'rails-controller-testing'
 end
 
 group :development do
