@@ -42,6 +42,6 @@ class WizardsController < ApplicationController
   end
   
   def user_wizard_params
-    params.require(:user_wizard).permit(:first_name, :last_name, :email_address)
+    params.require(:user_wizard).permit(:first_name, :last_name, :email_address, :age, :height_feets, :height_inches, :weight)
   end
 end

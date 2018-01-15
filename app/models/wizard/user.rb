@@ -5,6 +5,7 @@ module Wizard
     # Base class to avoid load all the user's attributes.
     class Base
       include ActiveModel::Model
+
       attr_accessor :user
       
       # map attributes to user
@@ -26,6 +27,14 @@ module Wizard
     class Step2 < Step1
       # note: very basic email validation.
       validates :email_address, presence: true, format: { with: /@/ }
+    end
+    
+    # step 3: step2 + age, height (feets and inches), and weight
+    class Step3 < Step2
+      validates :age, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: ::User::AGES.count }
+      validates :height_feets, presence: true, numericality: { greater_than_or_equal_to: 0 }
+      validates :height_inches, presence: true, numericality: { greater_than_or_equal_to: 0 }
+      validates :weight, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
     end
   end
 end

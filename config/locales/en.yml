@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  _17_or_younger: "17 or younger"
+  _18_25: "18 - 25"
+  _26_35: "26 - 35"
+  _36_45: "36 - 45"
+  _46_or_older: "46 or older"

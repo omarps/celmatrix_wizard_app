@@ -1,0 +1,19 @@
+.container-fluid
+  %h1 Step 3
+  - step = 'step3'
+  %p= render partial: "step_buttongroup", locals: { current_step: step }
+  %p= render partial: "step_progress", locals: { valuenow: "60" }
+  .form-inputs
+    = simple_form_for @user_wizard, as: :user_wizard, url: validate_step_wizard_path do |f|
+      = f.error_notification
+      = hidden_field_tag :current_step, step
+      = f.label :age
+      = f.input_field :age, collection: age_values, class: "form-control"
+      .row
+        .col
+          = f.input :height_feets
+        .col
+          = f.input :height_inches
+      = f.input :weight
+      = f.submit 'Next', class: 'btn btn-success'
+  %p= link_to "Back", root_path
